@@ -283,7 +283,7 @@ def main(unused_argv):
             _, step, loss, summary = sess.run([train_op, global_step, cross_entropy, merged], feed_dict=train_feed, options=run_options, run_metadata=run_metadata)
 
             now = time.time()
-            if(local_step % 2 == 0):
+            if(local_step % 1 == 0):
                 print("%s: Worker %d: training step %d done (global step: %d), loss: %.6f" %
                    (time.ctime(now), FLAGS.task_index, local_step, step+1, loss))
                 train_writer.add_run_metadata(run_metadata, 'step'+str(step+1))
