@@ -218,7 +218,7 @@ def main(unused_argv):
                                                        global_step=global_step, 
                                                        learning_rate=0.001, 
                                                        optimizer=grad_op, 
-                                                       clip_gradients=1)
+                                                       clip_gradients=1.0)
             tf.scalar_summary('learning_rate', learning_rate)
 
         '''if FLAGS.sync_replicas and is_chief:
